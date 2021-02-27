@@ -11,7 +11,7 @@ const Url = require('../module/url');
 
 router.post('/shorten',async (req,res)=>{
     const {longUrl} = req.body;
-    const baseUrl = process.env.baseUrl;
+    const baseUrl = "https://"+process.env.baseUrl;
     console.log(baseUrl);
     if(!validUrl.isUri(baseUrl)){
         return res.status(401).json('Invalid base url');
